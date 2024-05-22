@@ -6,7 +6,7 @@ spring:
   thymeleaf:
     check-template-location: false
   profiles:
-    active: desenvolvimento
+    active: homologacao
   servlet:
     multipart:
       max-file-size: 1GB
