@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:oracle:${DB_HOMOLOG_SERVER:thin:@oracle.fiap.com.br}:${DB_HOMOLOG_PORT:1521}:${DB_HOMOLOG_NAME:ORCL}
-    username: ${DB_HOMOLOG_USERNAME:rm98524}
-    password: ${DB_HOMOLOG_PASSWORD:100603}
+    url: ${DB_HOMOLOG_URL}
+    username: ${DB_HOMOLOG_USERNAME}
+    password: ${DB_HOMOLOG_PASSWORD}
   jpa:
     open-in-view: false
     show-sql: true

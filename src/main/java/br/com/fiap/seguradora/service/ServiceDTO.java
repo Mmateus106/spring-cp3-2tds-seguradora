@@ -1,6 +1,7 @@
 package br.com.fiap.seguradora.service;
 
 
+import br.com.fiap.seguradora.entity.Veiculo;
 import org.springframework.data.domain.Example;
 
 import java.util.Collection;
@@ -12,6 +13,11 @@ import java.util.Optional;
  * @param <Response>> ResponseDTO
  */
 public interface ServiceDTO<Entity, Request, Response> {
+
+//    public void teste() {
+//        var veiculo = new Veiculo();
+//        var id = veiculo.getId()
+//    }
 
 
     public Collection<Entity> findAll(Example<Entity> example);
