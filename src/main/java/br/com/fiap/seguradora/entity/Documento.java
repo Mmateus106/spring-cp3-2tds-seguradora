@@ -15,25 +15,28 @@ import java.util.Set;
 @Builder
 
 @Entity
-@Table(name = "TBL_DOCUMENTO")
+@Table(name = "TBL_DOCUMENTO", uniqueConstraints = {
+        @UniqueConstraint(name = "UK_DOCUMENTO_TIPO",columnNames = "TP_DOCUMENTO"),
+        @UniqueConstraint(name = "UK_DOCUMENTO_NUMERO",columnNames = "NM_DOCUMENTO")
+})
 public class Documento {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_DOCUMENTO")
     @SequenceGenerator(name = "SQ_DOCUMENTO", sequenceName = "SQ_DOCUMENTO", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_DOCUMENTO")
     @Column(name = "ID_DOCUMENTO")
     private Long id;
 
-    @Column(name = "NUMERO_DOCUMENTO")
+    @Column(name = "NM_DOCUMENTO")
     private String numero;
 
-    @Column(name = "TIPO_DOCUMENTO")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "TP_DOCUMENTO")
     private TipoDocumento tipo;
 
-    //Relacionamento ManyToMany
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinTable(
-            name = "TB_DOCUMENTO_FOTO",
+            name = "TBL_DOCUMENTO_FOTO",
             joinColumns = {
                     @JoinColumn(
                             name = "DOCUMENTO",

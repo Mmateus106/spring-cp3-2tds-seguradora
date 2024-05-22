@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: ${DB_HOMOLOG_URL}
-    username: ${DB_HOMOLOG_USERNAME}
-    password: ${DB_HOMOLOG_PASSWORD}
+    url: jdbc:mariadb://${DB_MARIA_SERVER:localhost}:${DB_MARIA_PORT:3306}/${DB_MARIA_NAME:cp3-seguradora}?createDatabaseIfNotExist=true
+    username: ${DB_MARIA_USERNAME:root}
+    password: ${DB_MARIA_PASSWORD:root}
   jpa:
     open-in-view: false
     show-sql: true

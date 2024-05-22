@@ -14,11 +14,6 @@ import java.util.Optional;
  */
 public interface ServiceDTO<Entity, Request, Response> {
 
-//    public void teste() {
-//        var veiculo = new Veiculo();
-//        var id = veiculo.getId()
-//    }
-
 
     public Collection<Entity> findAll(Example<Entity> example);
 

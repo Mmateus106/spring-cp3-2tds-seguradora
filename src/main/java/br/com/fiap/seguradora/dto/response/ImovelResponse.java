@@ -1,10 +1,12 @@
 package br.com.fiap.seguradora.dto.response;
 
 import br.com.fiap.seguradora.entity.Foto;
+import lombok.Builder;
 
 import java.math.BigDecimal;
 import java.util.Collection;
 
+@Builder
 public record ImovelResponse(
 
         BigDecimal valor,

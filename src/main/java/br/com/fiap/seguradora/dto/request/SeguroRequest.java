@@ -27,5 +27,6 @@ public record SeguroRequest(
 
         @Valid
         AbstractRequest objeto
+
 ) {
 }

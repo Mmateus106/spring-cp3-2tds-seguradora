@@ -10,12 +10,12 @@ import java.math.BigDecimal;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "TYPE")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 
+@Table(name = "TBL_ASSEGURAVEL")
 public class Asseguravel {
 
     @Id

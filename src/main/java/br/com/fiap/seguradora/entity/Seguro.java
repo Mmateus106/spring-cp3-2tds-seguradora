@@ -18,42 +18,40 @@ import java.time.LocalDate;
 public class Seguro {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_SEGURO")
     @SequenceGenerator(name = "SQ_SEGURO", sequenceName = "SQ_SEGURO", allocationSize = 1)
-
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_SEGURO")
     @Column(name = "ID_SEGURO")
     private Long id;
 
-    @Column(name = "PREMIO_SEGURO")
-    private double premio;
+    @Column(name = "PREMIO")
+    private Double premio;
 
-    @Column(name = "VALOR_SEGURO")
-    private double valor;
+    @Column(name = "VL_SEGURO")
+    private Double valor;
 
-    @Column(name = "INICIO_SEGURO")
-    private LocalDate inicio;
+    @Column(name = "SEGURO_INICIO")
+    private LocalDate inico;
 
-    @Column(name = "FIM_SEGURO")
+    @Column(name = "SEGURO_FIM")
     private LocalDate fim;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(
-            name = "PESSOA",
+            name = "CONTRATANTE",
             referencedColumnName = "ID_PESSOA",
             foreignKey = @ForeignKey(
-                    name = "FK_SEGURO_PESSOA"
+                    name = "FK_CONTRATANTE_SEGURO"
             )
     )
     private Pessoa contratante;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(
-            name = "ASSEGURAVEL",
+            name = "OBJETO",
             referencedColumnName = "ID_ASSEGURAVEL",
             foreignKey = @ForeignKey(
-                    name = "FK_SEGURO_ASSEGURAVEL"
+                    name = "FK_OBJETO_SEGURO"
             )
     )
-    private Pessoa objeto;
-
+    private Asseguravel objeto;
 }

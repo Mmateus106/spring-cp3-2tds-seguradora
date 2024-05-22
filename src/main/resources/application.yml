@@ -6,7 +6,7 @@ spring:
   thymeleaf:
     check-template-location: false
   profiles:
-    active: homologacao
+    active: desenvolvimento
   servlet:
     multipart:
       max-file-size: 1GB
@@ -14,5 +14,4 @@ spring:
   # Development properties (also used for docker-compose)
   config:
     import: optional:file:.env[.properties]
-
 
