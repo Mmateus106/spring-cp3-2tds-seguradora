@@ -1,27 +1,26 @@
 package br.com.fiap.seguradora.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.Year;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Data
+@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 
 @Entity
-@Table(name = "TBL_VEICULO")
+@Table(name = "TBL_VEICULO", uniqueConstraints = {
+        @UniqueConstraint(name = "UK_VEICULO_CHASSIS", columnNames = "CHASSIS")
+})
 public class Veiculo extends Asseguravel{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_IMOVEL")
-    @SequenceGenerator(name = "SQ_IMOVEL", sequenceName = "SQ_IMOVEL", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_VEICULO")
+    @SequenceGenerator(name = "SQ_VEICULO", sequenceName = "SQ_VEICULO", allocationSize = 1)
 
     @Column(name = "PLACA_VEICULO")
     private String placa;
