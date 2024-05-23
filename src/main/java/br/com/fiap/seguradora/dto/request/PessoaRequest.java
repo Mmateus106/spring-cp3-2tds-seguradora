@@ -20,11 +20,14 @@ public record PessoaRequest(
         @NotNull(message = "Email é um campo obrigatório")
         String email,
 
+        @NotNull
         @PastOrPresent
         LocalDate nascimento,
 
+        @NotNull
         TipoPessoa tipo,
 
+        @NotNull
         @Valid
         DocumentoRequest documento
 ) {
