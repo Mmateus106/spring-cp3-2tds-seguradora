@@ -45,9 +45,7 @@ public class PessoaService implements ServiceDTO<Pessoa, PessoaRequest, PessoaRe
     @Override
     public Pessoa toEntity(PessoaRequest dto) {
 
-        var enderecos = enderecoService.findById(dto.endereco().id());
-
-        var documento = docService.findById( dto.documento().id() );
+        Documento documento = docService.toEntity(dto.documento());
 
         return Pessoa.builder()
                 .nome(dto.nome())
@@ -62,7 +60,7 @@ public class PessoaService implements ServiceDTO<Pessoa, PessoaRequest, PessoaRe
     @Override
     public PessoaResponse toResponse(Pessoa e) {
 
-        var documento = docService.toResponse(e.getDocumento());
+        DocumentoResponse documento = docService.toResponse(e.getDocumento());
 
         Collection<EnderecoResponse> enderecos = null;
         if (Objects.nonNull(e.getEnderecos()) && !e.getEnderecos().isEmpty())

@@ -17,6 +17,8 @@ public record VeiculoRequest(
 
         String marca,
 
+        String chassis,
+
         @PastOrPresent
         Year ano,
 

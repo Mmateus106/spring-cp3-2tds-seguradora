@@ -1,5 +1,6 @@
 package br.com.fiap.seguradora.dto.response;
 
+import br.com.fiap.seguradora.dto.request.AbstractRequest;
 import lombok.Builder;
 
 import java.time.LocalDate;

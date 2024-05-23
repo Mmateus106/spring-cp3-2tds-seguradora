@@ -11,7 +11,7 @@ public record ImovelRequest(
         String descricao,
 
         @Positive
-        Float metroQuadrados,
+        Float metrosQuadrados,
 
         @Positive
         Integer quartos,
@@ -25,6 +25,6 @@ public record ImovelRequest(
         TipoSeguro tipo,
 
         @Valid
-        AbstractRequest endereco
+        EnderecoRequest endereco
 ) {
 }

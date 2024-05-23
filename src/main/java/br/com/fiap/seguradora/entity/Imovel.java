@@ -10,6 +10,8 @@ import java.util.Set;
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
 @Entity
 @Table(name = "TBL_IMOVEL", uniqueConstraints = {
         @UniqueConstraint(name = "UK_IMOVEL_MATRICULA", columnNames = "MATRICULA_IMOVEL")
