@@ -1,0 +1,350 @@
+{
+	"info": {
+		"_postman_id": "de873267-b7aa-4999-ac1b-2fb6d107fc7c",
+		"name": "CP3_SeguradoraPostMan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33729336"
+	},
+	"item": [
+		{
+			"name": "Pessoa",
+			"item": [
+				{
+					"name": "Pessoas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"João\",\r\n    \"sobrenome\": \"Silva\",\r\n    \"email\": \"joao.silva@example.com\",\r\n    \"nascimento\": \"1980-01-01\",\r\n    \"tipo\": \"PF\",\r\n    \"documento\": {\r\n        \"numero\": \"123456789\",\r\n        \"tipo\": \"CPF\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:80/pessoas",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"pessoas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pessoas by example",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/pessoas",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"pessoas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pessoas by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/pessoas/?id",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"pessoas",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null,
+									"description": "ID da pessoa"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Documento",
+			"item": [
+				{
+					"name": "Documentos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/documentos",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"documentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Documento by example",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/documentos",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"documentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Documentos by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/documentos/?id",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"documentos",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Imovel",
+			"item": [
+				{
+					"name": "Imoveis",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/imoveis",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"imoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Imoveis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/imoveis",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"imoveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Imoveis by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/imoveis/?id",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"imoveis",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seguro",
+			"item": [
+				{
+					"name": "Seguros",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/seguros",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"seguros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Seguros by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/seguros/?id",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"seguros",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Seguros by example",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/seguros",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"seguros"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Veiculo",
+			"item": [
+				{
+					"name": "Veiculos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/veiculos",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"veiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Veiculos by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/veiculos/?id",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"veiculos",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Veiculos by example",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:80/veiculos",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"veiculos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
